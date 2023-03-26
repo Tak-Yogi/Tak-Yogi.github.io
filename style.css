@@ -1,0 +1,137 @@
+body {
+    /* ページ全体の余白を0 */
+    margin: 0;
+    /* フォントをsans-serifに設定 */
+    font-family: sans-serif;
+}
+
+/* ヘッダーのスタイルを定義 */
+header {
+    /* フレックスボックスに設定 */
+    display: flex;
+    /* アイテムが中央に配置 */
+    align-items: center;
+    /* ヘッダーは固定位置 */
+    position: fixed;
+    /* 上位置の配置 */
+    top: 0;
+    /* 幅の設定 */
+    width: 100%;
+    /* 背景色は白 */
+    background-color: white;
+    /* ボックスの重なり順序を1に指定 */
+    z-index: 1;
+}
+
+header img {
+    /* 画像の高さ設定 */
+    height: 60px;
+}
+
+header h1 {
+    /* h1要素の左マージン設定 */
+    margin-left: 20px;
+}
+
+/* リストのスタイルを定義 */
+#pokemon-list {
+    /* フレックスボックスに設定 */
+    display: flex;
+    /* アイテムが折り返される */
+    flex-wrap: wrap;
+    /* 上マージン設定 */
+    margin-top: 90px;
+}
+
+/* カードのスタイルを定義 */
+.card {
+    /* インラインブロックで設定 */
+    display: inline-block;
+    /* 幅サイズの設定 */
+    width: 200px;
+    /* 縦サイズの設定 */
+    height: 200px;
+    /* マージンの設定 */
+    margin: 10px;
+    /* 境界線の設定 */
+    border: 1px solid black;
+    /* テキストの位置設定 */
+    text-align: center;
+}
+
+.card:hover {
+    background-color: lightgray;
+}
+
+/* カード内のh2要素とh3要素の設定 */
+.card h2,
+.card h3 {
+    /* マージンの設定 */
+    margin: 0;
+    /* パディングの設定 */
+    padding: 1px;
+}
+
+/* .card img {
+    max-width: 100%;
+    height: auto;
+} */
+
+
+/* 詳細情報のスタイル定義 */
+#pokemon-details {
+    /* 位置設定 */
+    position: fixed;
+    /* 上位置 */
+    top: 50%;
+    /* 横位置 */
+    left: 50%;
+    /* 中央揃え */
+    transform: translate(-50%, -50%);
+    /* 幅設定 */
+    width: 80%;
+    /* 最大高さ設定 */
+    max-height: 80%;
+    /* 情報量により縦方向のスクロール可 */
+    overflow-y: auto;
+    /* 背景色 */
+    background-color: white;
+    /* パディング設定 */
+    padding: 20px;
+    /* 影設定 */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    /* ボックスの重なり順序を2に指定 */
+    z-index: 2;
+}
+
+/* 非表示要素のスタイル設定 */
+.hidden {
+    display: none;
+}
+
+/* オーバーレイのスタイル定義 */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 透明度を設定 */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* テーブルのスタイル定義 */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
