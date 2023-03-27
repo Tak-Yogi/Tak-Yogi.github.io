@@ -4,9 +4,20 @@
 const pokemonDetails = document.querySelector('#pokemon-details');
 const overlay = document.querySelector('#overlay');
 
+
+// showPokemonDetails関数:
+// 引数としてpokemonという変数を受け取り、
+// ポケモンの詳細情報を表示するための処理を行います。
 function showPokemonDetails(pokemon) {
+    // pokemonDetailsという変数のinnerHTMLプロパティを空文字列に設定
     pokemonDetails.innerHTML = '';
+    // classListプロパティから、removeメソッドを呼び出して、
+    //「hidden」というクラス名を削除
+    // これにより、要素が表示される
     pokemonDetails.classList.remove('hidden');
+    // classListプロパティから、removeメソッドを呼び出して、
+    //「hidden」というクラス名を削除
+    // これにより、要素が表示される
     overlay.classList.remove('hidden');
 
     const name = document.createElement('h2');
@@ -159,16 +170,26 @@ function showPokemonDetails(pokemon) {
     }
 
 
-
+    // Closeというテキストが表示されるボタン要素（<button>タグ）を作成
     const closeButton = document.createElement('button');
     closeButton.textContent = 'Close';
+    // ボタン要素にクリックイベントリスナーを追加
+    // ボタンがクリックされたときに呼び出されるhidePokemonDetails関数を指定
     closeButton.addEventListener('click', hidePokemonDetails);
+    //このボタン要素も、pokemonDetailsが参照するHTML要素の子要素として追加
     pokemonDetails.appendChild(closeButton);
 }
 
+// hidePokemonDetails関数は
+// ポケモンの詳細情報を非表示にするための処理を行う。
 function hidePokemonDetails() {
     pokemonDetails.classList.add('hidden');
     overlay.classList.add('hidden');
 }
 
+// overlayという変数に対して、クリックイベントリスナーを追加
+// overlayが参照するHTML要素がクリックされたときに呼び出される
+// hidePokemonDetails関数を指定
+// ユーザーがoverlayが参照するHTML要素をクリックすると、
+// ポケモンの詳細情報が非表示になる
 overlay.addEventListener('click', hidePokemonDetails);

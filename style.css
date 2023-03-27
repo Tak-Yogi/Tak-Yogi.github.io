@@ -1,10 +1,3 @@
-body {
-    /* ページ全体の余白を0 */
-    margin: 0;
-    /* フォントをsans-serifに設定 */
-    font-family: sans-serif;
-}
-
 /* ヘッダーのスタイルを定義 */
 header {
     /* フレックスボックスに設定 */
@@ -19,11 +12,14 @@ header {
     width: 100%;
     /* 背景色は白 */
     background-color: white;
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     /* ボックスの重なり順序を1に指定 */
     z-index: 1;
 }
 
 header img {
+    margin-left: 20px;
     /* 画像の高さ設定 */
     height: 60px;
 }
@@ -33,14 +29,31 @@ header h1 {
     margin-left: 20px;
 }
 
+
+body {
+    /* ページ全体の余白を0 */
+    margin: 0;
+    /* フォントをsans-serifに設定 */
+    font-family: sans-serif;
+    background-image: url(images/pattern.svg);
+    background-color: rgb(201, 201, 201);
+}
+
+
 /* リストのスタイルを定義 */
 #pokemon-list {
-    /* フレックスボックスに設定 */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 0px;
+    /* フレックスボックスに設定
     display: flex;
-    /* アイテムが折り返される */
-    flex-wrap: wrap;
+
+    /* 一行に収まらない時に複数行にする */
+    /* flex-wrap: wrap; */
     /* 上マージン設定 */
-    margin-top: 90px;
+    margin-top: 120px;
 }
 
 /* カードのスタイルを定義 */
@@ -50,13 +63,24 @@ header h1 {
     /* 幅サイズの設定 */
     width: 200px;
     /* 縦サイズの設定 */
-    height: 200px;
+    height: 280px;
     /* マージンの設定 */
     margin: 10px;
+    background-color: white;
     /* 境界線の設定 */
-    border: 1px solid black;
+    /* border: 0.5px solid black; */
+    border-radius: 10px;
     /* テキストの位置設定 */
     text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.pokemon-header {
+    display: flex;
+}
+
+.pokemon-header span {
+    font-size: 0.8em;
 }
 
 .card:hover {
@@ -64,19 +88,35 @@ header h1 {
 }
 
 /* カード内のh2要素とh3要素の設定 */
-.card h2,
+.card h2 {
+    font-size: medium;
+    margin-top: 20px;
+    /* マージンの設定 */
+    margin: 1px;
+    /* パディングの設定 */
+    padding: 1px;
+}
+
+
 .card h3 {
+    margin-top: 0%;
+    /* マージンの設定 */
+    margin: 1px;
+    /* パディングの設定 */
+    padding: 1px;
+}
+
+.card img {
+    max-width: 90%;
+    height: auto;
+}
+
+.card p {
     /* マージンの設定 */
     margin: 0;
     /* パディングの設定 */
     padding: 1px;
 }
-
-/* .card img {
-    max-width: 100%;
-    height: auto;
-} */
-
 
 /* 詳細情報のスタイル定義 */
 #pokemon-details {
@@ -126,7 +166,8 @@ table {
     width: 100%;
 }
 
-th, td {
+th,
+td {
     border: 1px solid black;
     padding: 8px;
     text-align: left;
@@ -134,4 +175,16 @@ th, td {
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+.pokemon-type {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.pokemon-type:hover {
+    background-color: #eee;
 }
